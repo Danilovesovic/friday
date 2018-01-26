@@ -39,6 +39,6 @@ app.post('/add',function (req,res) {
 
 
 
-app.listen(8080,function () {
+app.listen(80,function () {
   console.log('Listening on port 3000'+process.env.PORT);
 })
