@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='todo'>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todo App MEAN</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+  <script src="app.js" charset="utf-8"></script>
+</head>
+<body ng-controller="mainCtrl">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <a href="" class="navbar-brand">Todo MEAN</a>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="new todo" ng-model="newMsg">
+          <span class="input-group-btn">
+            <button class="btn btn-danger" ng-click="addNewTodo()">Add</button>
+          </span>
+        </div><br><br>
+      </div>
+    </div>
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="col-lg-4" ng-repeat="task in todos">
+        <div class="panel panel-default" >
+          <div class="panel-heading">
+            <h3 class="panel-title">Task No: {{$index+1}}</h3>
+          </div>
+          <div class="panel-body">
+            <h2>{{task.msg}}</h2>
+          </div>
+          <div class="panel-footer text-right">
+            <button class="btn btn-danger" ng-click="deleteTask(task._id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
